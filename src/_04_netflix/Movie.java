@@ -11,6 +11,37 @@ public class Movie implements Comparable<Movie> {
 	private String title;
 	private int stars;
 
+	public static void main(String[] args) {
+		Movie avatarMovie = new Movie("Avatar", 5);
+		Movie jessieMovie = new Movie("Jessie",5);
+		Movie carmenSanDiegoMovie = new Movie("Carmen SanDiego",4);
+		Movie bellaAndBulldogsMovie = new Movie("Bella and the Bulldogs",4);
+		Movie mitchellsVsMachinesMovie = new Movie("Mitchells vs Machines",5);
+		
+		System.out.println(avatarMovie.getTicketPrice());
+		System.out.println(jessieMovie.getTicketPrice());
+		System.out.println(carmenSanDiegoMovie.getTicketPrice());
+		System.out.println(bellaAndBulldogsMovie.getTicketPrice());
+		System.out.println(mitchellsVsMachinesMovie.getTicketPrice());
+		
+		NetflixQueue netflixQueue = new NetflixQueue();
+		netflixQueue.addMovie(mitchellsVsMachinesMovie);
+		netflixQueue.addMovie(bellaAndBulldogsMovie);
+		netflixQueue.addMovie(carmenSanDiegoMovie);
+		netflixQueue.addMovie(jessieMovie);
+		netflixQueue.addMovie(avatarMovie);
+		
+		netflixQueue.printMovies();
+		
+		netflixQueue.sortMoviesByRating();
+		System.out.println("The best movie is " + netflixQueue.getBestMovie());
+		System.out.println(netflixQueue.getMovie(1));
+		
+		
+	}
+	
+	
+	
 	/**
 	 * Constructor for the movie
 	 * 
