@@ -13,10 +13,10 @@ public class Movie implements Comparable<Movie> {
 
 	public static void main(String[] args) {
 		Movie avatarMovie = new Movie("Avatar", 5);
-		Movie jessieMovie = new Movie("Jessie",5);
+		Movie jessieMovie = new Movie("Jessie",4);
 		Movie carmenSanDiegoMovie = new Movie("Carmen SanDiego",4);
 		Movie bellaAndBulldogsMovie = new Movie("Bella and the Bulldogs",4);
-		Movie mitchellsVsMachinesMovie = new Movie("Mitchells vs Machines",5);
+		Movie mitchellsVsMachinesMovie = new Movie("Mitchells vs Machines",3);
 		
 		System.out.println(avatarMovie.getTicketPrice());
 		System.out.println(jessieMovie.getTicketPrice());
