@@ -9,6 +9,9 @@ public class Frogger extends PApplet {
     @Override
     public void settings() {
         size(WIDTH, HEIGHT);
+        
+        
+        size(800, 600);
     }
 
     @Override
@@ -18,7 +21,9 @@ public class Frogger extends PApplet {
 
     @Override
     public void draw() {
-
+    	background(0,0,255);
+    	fill(255, 0,0);
+    	ellipse(16, 300, 40, 80);
     }
     static public void main(String[] args) {
         PApplet.main(Frogger.class.getName());
