@@ -34,15 +34,27 @@ public class Frogger extends PApplet {
     	
     }
     
-   public void keepFrogIntsideFromCanvas(){
+   public boolean keepFrogInsideFromCanvas(int x, int y){
     	if(x>601) {
-    		x-=1;
+    		return false;
     	}
-    	else if(x<0){
-    		x+=1;
+    	else if(x<=0){
+    	   return false;
+    	   
+   
+    	   
     	}
+    	
+    	return true;
+    	
     }
     
+   
+   
+   
+   
+   
+   
     
     public void keyPressed()
     {
@@ -50,19 +62,25 @@ public class Frogger extends PApplet {
             if(keyCode == UP)
             {
                 //Frog Y position goes up
+            	y-=1;
             }
             else if(keyCode == DOWN)
             {
                 //Frog Y position goes down 
+            	y+=1;
             }
-            else if(keyCode == RIGHT)
+            else if(keyCode == RIGHT && keepFrogInsideFromCanvas(x+1, y))
             {
                 //Frog X position goes right
+            	x+=1;
+            	
+            	
             }
-            else if(keyCode == LEFT)
+            else if(keyCode == LEFT && keepFrogInsideFromCanvas (x-1, y))
             {
                 //Frog X position goes left
-            }
+            	x-=1;
+            }   
         }
     }
     static public void main(String[] args) {
