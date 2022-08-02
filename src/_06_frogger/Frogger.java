@@ -3,22 +3,23 @@ package _06_frogger;
 import processing.core.PApplet;
 
 public class Frogger extends PApplet {
-    static final int WIDTH = 600;
-    static final int HEIGHT = 400;
+    static final int WIDTH = 800;
+    static final int HEIGHT = 600;
     int x = 400;
     int y = 580;
+    Car car1;
     @Override
     public void settings() {
     	
         size(WIDTH, HEIGHT);
         
         
-        size(800, 600);
+       
     }
 
     @Override
     public void setup() {
-
+car1 = new Car(40, 60, 40, 50);
     }
 
     @Override
@@ -29,6 +30,8 @@ public class Frogger extends PApplet {
     	
     	fill(0, 225, 0);
     	ellipse(x, y, 30, 30);
+    	
+    	rect(car1.x,car1.y,car1.size,car1.size);
 
   
     	
