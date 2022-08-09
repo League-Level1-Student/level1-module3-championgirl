@@ -8,6 +8,7 @@ public class Frogger extends PApplet {
     int x = 400;
     int y = 580;
     Car car1;
+    Car car2;
     @Override
     public void settings() {
     	
@@ -19,11 +20,13 @@ public class Frogger extends PApplet {
 
     @Override
     public void setup() {
-car1 = new Car(40, 60, 40, 50);
+car1 = new Car(40, 60, 200, 90);
+car2 = new Car(100,200,200,90);
     }
 
     @Override
     public void draw() {
+   
     	background(0,0,255);
     	fill(255, 0,0);
     	ellipse(16, 300, 40, 80);
@@ -31,9 +34,9 @@ car1 = new Car(40, 60, 40, 50);
     	fill(0, 225, 0);
     	ellipse(x, y, 30, 30);
     	
-    	rect(car1.x,car1.y,car1.size,car1.size);
-
-  
+    	rect(car1.x,car1.y, car1.speed,car1.size);
+        rect(car2.x, car2.y, car2.speed, car2.size);
+    	
     	
     }
     

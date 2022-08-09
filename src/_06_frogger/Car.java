@@ -1,7 +1,7 @@
 package _06_frogger;
 import processing.core.PApplet;
 public class Car extends PApplet {
-	int x = 500;
+ int x = 500;
 	public int getX() {
 		return x;
 	}
@@ -35,18 +35,33 @@ public class Car extends PApplet {
 		      this.y = y ;
 		      this.speed = speed;
 		      this.size = size;
-		      
-		  
+             
+	}
+	
+	public void carMoveLeft() {
+		
+		
+			x-=speed;
+		if (x) {
+			
+		}
 		
 	}
 	
-	//void display()
-	 // {
-	  //  fill(0,255,0);
-	 //   rect(x , y,  size, 50);
-	  //}
-	
-	
-	
-	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
