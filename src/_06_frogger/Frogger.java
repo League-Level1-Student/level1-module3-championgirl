@@ -27,6 +27,20 @@ car2 = new Car(100,200,200,90);
     @Override
     public void draw() {
    
+    car1.carMoveLeft();
+    car2.carMoveRight();
+   
+    
+    intersects.car1(); 
+    
+    if(intersect==true) {
+    	return ellipse x=0;
+    }
+    
+    
+    
+    
+    	
     	background(0,0,255);
     	fill(255, 0,0);
     	ellipse(16, 300, 40, 80);
@@ -92,4 +106,16 @@ car2 = new Car(100,200,200,90);
     static public void main(String[] args) {
         PApplet.main(Frogger.class.getName());
     }
+    
+    boolean intersects(Car car) {
+    	 if ((y > car.getY() && y < car.getY()+50) &&
+    	                (x > car.getX() && x < car.getX()+car.getSize())) {
+    	   return true;
+    	  }
+    	 else  {
+    	  return false;
+    	 }
+    	 
+    }
+    
 }
