@@ -1,6 +1,7 @@
 package _06_frogger;
 
 import processing.core.PApplet;
+import processing.core.PImage;
 
 public class Frogger extends PApplet {
     static final int WIDTH = 800;
@@ -9,6 +10,10 @@ public class Frogger extends PApplet {
     int y = 580;
     Car car1;
     Car car2;
+    PImage frog;
+    PImage carLeft;
+    PImage carRight;
+    PImage froggerBackground;
     @Override
     public void settings() {
     	
@@ -20,8 +25,8 @@ public class Frogger extends PApplet {
 
     @Override
     public void setup() {
-car1 = new Car(40, 60, 200, 90);
-car2 = new Car(100,200,200,90);
+car1 = new Car(40, 60, 5, 90);
+car2 = new Car(100,200,5,90);
     }
 
     @Override
@@ -31,25 +36,27 @@ car2 = new Car(100,200,200,90);
     car2.carMoveRight();
    
     
-    intersects.car1(); 
+  
     
-    if(intersect==true) {
-    	return ellipse x=0;
+    if(intersects(car1) || intersects (car2)) {
+    x=400;
+    y = 580;
     }
     
     
     
+ 
     
     	
     	background(0,0,255);
-    	fill(255, 0,0);
-    	ellipse(16, 300, 40, 80);
+    	
     	
     	fill(0, 225, 0);
     	ellipse(x, y, 30, 30);
-    	
-    	rect(car1.x,car1.y, car1.speed,car1.size);
-        rect(car2.x, car2.y, car2.speed, car2.size);
+    	 
+    	fill(225, 0, 0);
+    	rect(car1.x,car1.y, car1.size,car1.size);
+        rect(car2.x, car2.y, car2.size, car2.size);
     	
     	
     }
@@ -82,24 +89,24 @@ car2 = new Car(100,200,200,90);
             if(keyCode == UP)
             {
                 //Frog Y position goes up
-            	y-=1;
+            	y-=5;
             }
             else if(keyCode == DOWN)
             {
                 //Frog Y position goes down 
-            	y+=1;
+            	y+=5;
             }
             else if(keyCode == RIGHT && keepFrogInsideFromCanvas(x+1, y))
             {
                 //Frog X position goes right
-            	x+=1;
+            	x+=5;
             	
             	
             }
             else if(keyCode == LEFT && keepFrogInsideFromCanvas (x-1, y))
             {
                 //Frog X position goes left
-            	x-=1;
+            	x-=5;
             }   
         }
     }

@@ -53,9 +53,9 @@ public class Car extends PApplet {
 	public void carMoveLeft() {
 
 		x -= speed;
-		if (x == 0) {
+		if (x <= 0) {
 
-			x = width;
+			x = Frogger.WIDTH;
 
 		}
 	}
@@ -63,7 +63,7 @@ public class Car extends PApplet {
 	public void carMoveRight() {
 
 		x += speed;
-		if (x == width) {
+		if (x >= Frogger.WIDTH) {
 
 			x = 0;
 		}
