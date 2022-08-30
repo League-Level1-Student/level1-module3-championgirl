@@ -22,16 +22,36 @@ public class Frogger extends PApplet {
         
        
     }
+    
+    
+    
+    
 
     @Override
     public void setup() {
-car1 = new Car(40, 60, 5, 90);
+car1 = new Car(40, 100, 5, 90);
 car2 = new Car(100,200,5,90);
+
+froggerBackground = loadImage("src/_06_frogger/froggerBackground.png");
+froggerBackground.resize(WIDTH,HEIGHT);
+carLeft = loadImage("src/_06_frogger/carLeft.png");
+carLeft.resize(160,100);
+carRight = loadImage("src/_06_frogger/carRight.png");
+carRight.resize(160,100);
+frog = loadImage("src/_06_frogger/frog.png");
+frog.resize(75,75);
+
     }
 
     @Override
     public void draw() {
    
+    	background(froggerBackground);
+        image (carLeft,car1.x,car1.y);
+        image (carRight,car2.x, car2.y);
+        image (frog, x, y);
+
+    	
     car1.carMoveLeft();
     car2.carMoveRight();
    
@@ -47,17 +67,7 @@ car2 = new Car(100,200,5,90);
     
  
     
-    	
-    	background(0,0,255);
-    	
-    	
-    	fill(0, 225, 0);
-    	ellipse(x, y, 30, 30);
-    	 
-    	fill(225, 0, 0);
-    	rect(car1.x,car1.y, car1.size,car1.size);
-        rect(car2.x, car2.y, car2.size, car2.size);
-    	
+   
     	
     }
     
